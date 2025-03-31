@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class Move : Transformator
+public class Move : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
 
     private void Update()
     {
-        Move(_moveSpeed);
+        ChangePosition();
+    }
+
+    private void ChangePosition()
+    {
+        transform.Translate(Vector3.forward * _moveSpeed * Time.deltaTime);
     }
 }
